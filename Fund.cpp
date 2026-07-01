@@ -244,6 +244,28 @@ int main()
             }
             break;
 
+        case 2: // Comedy
+            movieMinAge = 13;
+            if (age < movieMinAge)
+            {
+                cout << RED << "Sorry! Comedy movies require age 13+. You are " << age << ".\n"
+                     << RESET;
+            }
+            else
+            {
+                movieName = "Murder Mystery";
+                movieStars = 4;
+                movieRecommended = true;
+                genresExplored[1]++;
+
+                cout << BOLD << "Recommended Movie: " << GREEN << movieName << RESET << "\n";
+                cout << "Rating: PG-13 | Genre: Comedy\n";
+                displayStars(movieStars);
+                cout << "Description: A couple gets entangled in a hilarious crime\n";
+                cout << "             investigation aboard a luxury yacht.\n";
+            }
+            break;
+
         default:
             cout << RED << "Invalid choice! Please choose between 1 and 6.\n"
                  << RESET;
