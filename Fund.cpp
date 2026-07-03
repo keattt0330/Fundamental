@@ -149,9 +149,9 @@ int main()
     // ==========================================
     cout << RED << BOLD;
     cout << " ##  ##  #####  ######  #####  ##     ##  ##  ##\n";
-    cout << " ### ##  ##       ##    ##     ##     ##  ####\n";
+    cout << " ### ##  ##       ##    ##     ##     ##   ####\n";
     cout << " ## ###  #####    ##    #####  ##     ##    ##\n";
-    cout << " ##  ##  ##       ##    ##     ##     ##  ####\n";
+    cout << " ##  ##  ##       ##    ##     ##     ##   ####\n";
     cout << " ##  ##  #####    ##    ##     #####  ##  ##  ##\n";
     cout << RESET;
 
@@ -288,7 +288,7 @@ int main()
             }
             break;
 
-		case 4: // Romance
+        case 4: // Romance
             movieMinAge = 13;
             if (age < movieMinAge)
             {
@@ -308,6 +308,32 @@ int main()
                 cout << "Description: A musician and a soldier form an unexpected bond\n";
                 cout << "             in a marriage of convenience.\n";
             }
+            break;
+
+        case 5: // Sci-Fi
+            movieMinAge = 13;
+            if (age < movieMinAge)
+            {
+                cout << RED << "Sorry! Sci-Fi movies require age 13+. You are " << age << ".\n"
+                     << RESET;
+            }
+            else
+            {
+                movieName = "The Adam Project";
+                movieStars = 4;
+                movieRecommended = true;
+                genresExplored[4]++;
+
+                cout << BOLD << "Recommended Movie: " << WHITE << movieName << RESET << "\n";
+                cout << "Rating: PG-13 | Genre: Sci-Fi\n";
+                displayStars(movieStars);
+                cout << "Description: A time-traveling pilot teams up with his younger\n";
+                cout << "             self to save the future of humanity.\n";
+            }
+            break;
+
+        case 6: // Manage Watchlist
+            watchlistCount = removeFromWatchlist(watchlist, watchlistCount);
             break;
 
         default:
